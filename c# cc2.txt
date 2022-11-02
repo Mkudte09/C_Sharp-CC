@@ -1,0 +1,43 @@
+using System;
+
+public class Discount
+{
+    public static void Main(String[] Args)
+    {
+        float f1, f2, f3,  t1, t2, t3;
+        float d1, d2, d3;
+        Console.WriteLine("Please Enter the name of the product");
+        string objName = Console.ReadLine();
+        Console.WriteLine("Please Enter the price of the product :");
+        int Price=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Is the product on SALE (yes/no)");
+        string onsale= Console.ReadLine();
+        Console.WriteLine("Please Enter number of product sold in day 1");
+        int day1= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Please Enter number of product sold in day 2");
+        int day2 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Please Enter number of product sold in day 3");
+        int day3 = Convert.ToInt32(Console.ReadLine());
+        if(onsale=="yes")
+        {
+            d1=Price*(7/100);
+            f1 = Price - d1;
+            d2 = f1 * 7 / 100;
+            f2 = f1 - d2;
+            d3 = f2 * 7 / 100;
+            f3 = f2 - d3;
+            t1 = f1 * day1;
+            t2 = f2 * day2;
+            t3 = f3 * day3;
+            Console.WriteLine($"Total sales on Day 1 : {t1} ");
+            Console.WriteLine($"Total sales on Day 2 : {t2} ");
+            Console.WriteLine($"Total sales on Day 3 : {t3} ");
+        }
+         else
+            Console.WriteLine("Product is NOT on sale");
+    }
+    
+    
+}
+
+

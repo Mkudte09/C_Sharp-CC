@@ -1,0 +1,67 @@
+using System;
+public class Students
+{
+    public static void Main(String[] Args)
+    {
+        Console.WriteLine("No. of students got placed in CS: ");
+        int CS= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("No. of students got placed in MECH:  ");
+        int MECH = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("No. of students got placed in MET:  ");
+        int MET = Convert.ToInt32(Console.ReadLine());
+         if(CS>MECH)
+            {
+                if(CS>MET)
+                {
+                    Console.WriteLine("Highest placement in CS Branch");
+                }
+                else if(CS==MET)
+                {
+                    Console.WriteLine("Highest placement in CS Branch");
+                    Console.WriteLine("Highest placement in MET Branch");
+                }
+                else
+                {
+                    Console.WriteLine("Highest placement in MET Branch");
+                }
+                
+            }
+            else if(MECH>CS)
+            {
+                if (MECH > MET)
+                {
+                    Console.WriteLine("Highest placement in MECH Branch");
+                }
+                else if (MECH == MET)
+                {
+                    Console.WriteLine("Highest placement in MECH Branch");
+                    Console.WriteLine("Highest placement in MET Branch");
+                }
+                else
+                {
+                    Console.WriteLine("Highest placement in MET Branch");
+                }
+            }
+            else
+            {
+                if (MECH > MET)
+                {
+                    Console.WriteLine("Highest placement in CS Branch");
+                    Console.WriteLine("Highest placement in MECH Branch");
+                }
+                else if (MECH == MET)
+                {
+                    Console.WriteLine("Highest placement in CS Branch");
+                    Console.WriteLine("Highest placement in MECH Branch");
+                    Console.WriteLine("Highest placement in MET Branch");
+                }
+                else
+                {
+                    Console.WriteLine("Highest placement in MET Branch");
+                }
+            }
+    }
+    
+    
+}
+

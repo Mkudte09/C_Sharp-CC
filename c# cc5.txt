@@ -1,0 +1,43 @@
+using System;
+public class TaxSystem
+	{
+	    public static double GetGrossPay(int hr_Worked)
+		{
+		    double gross_Payment;
+			if(hr_Worked < 56)
+				gross_Payment = hr_Worked * 80;
+			else
+			{
+				int extra_Hours = hr_Worked - 56;
+				gross_Payment = (extra_Hours * 1.5 * 80) + (hr_Worked * 80);
+			}
+			
+			return gross_Payment;
+		}
+		public static double CalculateTax(double gross_Payment)
+		{
+			double deductable_Tax;
+			
+			deductable_Tax = gross_Payment * 0.02;
+			
+			return deductable_Tax;
+		}
+		public static double CalculateNetPay(int hr_Worked)
+		{
+			double netPay, gross_Payment, deductable_Tax;
+			
+			gross_Payment = GetGrossPay(hr_Worked);
+			deductable_Tax = CalculateTax(gross_Payment);
+			netPay = gross_Payment - deductable_Tax;
+			
+			return netPay;
+		}
+		public static void Main(string[] args)		
+		{
+			Console.WriteLine("Enter the number of hours worked");
+			int hr_Worked = int.Parse(Console.ReadLine());
+			double netpay=CalculateNetPay(hr_Worked);
+			Console.WriteLine($"The calculated Net pay is ${netpay}");
+		}
+	}
+
